@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>game</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="viewport" content="target-densitydpi=high-dpi,width=device-width"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <script src="js/phaser.min.js"></script>
+    <script src="js/boot.js"></script>
+    <script src="js/preloader.js"></script>
+    <script src="js/play.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #222222;
+        }
+        canvas {
+            cursor: crosshair;
+        }
+    </style>
+    <!--<style>-->
+        <!--body,p,div{ margin: 0; padding: 0; }-->
+        <!--body {background: #FFFFFF; }-->
+        <!--canvas{ margin:0;}-->
+    <!--</style>-->
+</head>
+<body>
+<div id="game_window"></div>
+<script>
+    var game = new Phaser.Game(288, 505, Phaser.AUTO, 'game_window');
+    game.state.add('Boot', eat.Boot);
+    game.state.add('Preloader', eat.Preloader);
+    game.state.add('Play', eat.Play);
+
+    game.state.start('Boot');
+</script>
+</body>
+</html>
